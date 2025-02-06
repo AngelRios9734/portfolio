@@ -69,27 +69,26 @@ const projects = [
                     ))}
                 </ul>
                 <div class="relative overflow-hidden rounded-2xl">
-                    <a href={el.url} target="_blank">
-                        <img
-                            src={el.img}
-                            alt={el.name}
-                            class="w-full h-full transition duration-700 transform inline
+                    <img
+                        src={el.img}
+                        alt={el.name}
+                        class="w-full h-full transition duration-700 transform inline
                hover:shadow-md
                hover:scale-110"
-                        />
-                    </a>
+                    />
                 </div>
-
                 <div class="flex justify-center items-center gap-8 mt-3">
-                    <button class="relative text-lg mt-4 px-3 py-1 shadow-md shadow-blue-200 text-white border-1 border-blue-250 bg-black overflow-hidden group">
-                        <span class="absolute inset-0 w-full h-full bg-transparent group-hover:bg-blue-950 transition-all duration-300" />
-                        <span class="flex gap-1 justify-center items-center relative z-10 group-hover:scale-105 transition-all duration-300">
-                            Preview
-                            <OpenIcon
-                                style={{ width: "22px", height: "22px" }}
-                            />
-                        </span>
-                    </button>
+                    <a href={el.url} target="_blank" >
+                        <button class="relative text-lg mt-4 px-3 py-1 shadow-md shadow-blue-200 text-white border-1 border-blue-250 bg-black overflow-hidden group">
+                            <span class="absolute inset-0 w-full h-full bg-transparent group-hover:bg-blue-950 transition-all duration-300" />
+                            <span class="flex gap-1 justify-center items-center relative z-10 group-hover:scale-105 transition-all duration-300">
+                                Preview
+                                <OpenIcon
+                                    style={{ width: "22px", height: "22px" }}
+                                />
+                            </span>
+                        </button>
+                    </a>
                     <button class="relative text-lg mt-4 px-3 py-1 shadow-md shadow-blue-200 text-white border-1 border-blue-250 bg-black overflow-hidden group">
                         <span class="absolute inset-0 w-full h-full bg-transparent group-hover:bg-blue-950 transition-all duration-300" />
                         <span class="flex gap-1 justify-center items-center relative z-10 group-hover:scale-105 transition-all duration-300">
