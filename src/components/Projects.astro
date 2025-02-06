@@ -1,0 +1,104 @@
+---
+import Pill from "./Pill.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import OpenIcon from "./icons/OpenIcon.astro";
+import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
+import GitHub from "./icons/GitHub.astro";
+
+const LIST_OF_TAGS = {
+    REACT: {
+        name: "React",
+        icon: ReactIcon,
+        style: { width: "22px", height: "22px" },
+    },
+
+    TS: {
+        name: "TypeScript",
+        icon: TypeScriptIcon,
+        style: { width: "22px", height: "18px" },
+    },
+
+    TAILWIND: {
+        name: "Tailwind",
+        icon: TailwindIcon,
+        style: { width: "22px", height: "18px" },
+    },
+
+    JS: {
+        name: "JavaScript",
+        icon: JavaScriptIcon,
+        style: { width: "22px", height: "18px" },
+    },
+};
+
+const projects = [
+    {
+        name: "Geo Weather",
+        description:
+            "Con esta app con solo poner el nombre de una ciudad o pais te dara su temperatura actual. asi como tambien el la hora el clima en los proximos dias y en las proximas horas",
+        img: "geoweather.webp",
+        tags: [LIST_OF_TAGS.REACT, LIST_OF_TAGS.TAILWIND, LIST_OF_TAGS.JS],
+        url: "https://geo-weather-global.netlify.app/",
+    },
+    {
+        name: "Battle Ship",
+        description: "Es un replica del juego conocida como Batalla naval.",
+        img: "battleship.webp",
+        tags: [LIST_OF_TAGS.REACT, LIST_OF_TAGS.TS, LIST_OF_TAGS.TAILWIND],
+        url: "https://battle-ship-app.netlify.app/",
+    },
+];
+---
+
+<section>
+    {
+        projects.map((el) => (
+            <article class="mb-20 max-w-2xl mx-auto p-4 mt-5">
+                <h2 class="text-2xl font-bold text-cyan-500 ">{el.name}</h2>
+                <p class="text-lg mb-2">{el.description}</p>
+                <ul class="flex mb-3 gap-2">
+                    {el.tags.map((tag) => (
+                        <li>
+                            <Pill>
+                                <tag.icon style={tag.style} fill="#61DAFB" />
+                                {tag.name}
+                            </Pill>
+                        </li>
+                    ))}
+                </ul>
+                <div class="relative overflow-hidden rounded-2xl">
+                    <a href={el.url} target="_blank">
+                        <img
+                            src={el.img}
+                            alt={el.name}
+                            class="w-full h-full transition duration-700 transform inline
+               hover:shadow-md
+               hover:scale-110"
+                        />
+                    </a>
+                </div>
+
+                <div class="flex justify-center items-center gap-8 mt-3">
+                    <button class="relative text-lg mt-4 px-3 py-1 shadow-md shadow-blue-200 text-white border-1 border-blue-250 bg-black overflow-hidden group">
+                        <span class="absolute inset-0 w-full h-full bg-transparent group-hover:bg-blue-950 transition-all duration-300" />
+                        <span class="flex gap-1 justify-center items-center relative z-10 group-hover:scale-105 transition-all duration-300">
+                            Preview
+                            <OpenIcon
+                                style={{ width: "22px", height: "22px" }}
+                            />
+                        </span>
+                    </button>
+                    <button class="relative text-lg mt-4 px-3 py-1 shadow-md shadow-blue-200 text-white border-1 border-blue-250 bg-black overflow-hidden group">
+                        <span class="absolute inset-0 w-full h-full bg-transparent group-hover:bg-blue-950 transition-all duration-300" />
+                        <span class="flex gap-1 justify-center items-center relative z-10 group-hover:scale-105 transition-all duration-300">
+                            Code
+                            <GitHub />
+                        </span>
+                    </button>
+                </div>
+            </article>
+        ))
+    }
+</section>

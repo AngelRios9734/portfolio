@@ -1,0 +1,26 @@
+---
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import GitHubIcon from "./icons/GitHub.astro"
+import LinkButon from "./LinkButton.astro"
+---
+
+<footer class="flex items-center justify-around gap-5 bg-black py-5">
+    <div>
+        <span> © 2024 Angel Rios. </span>
+    </div>
+    <div class="flex justify-center items-center gap-3">
+        <ul class="flex justify-center items-center text-center">
+            <li>
+                <LinkButon>
+                    <InstagramIcon style="width: 40px; height: 40px;" />
+                </LinkButon>
+            </li>
+            <li>
+                <LinkButon>
+                    <GitHubIcon style="width: 40px; height: 37px;"/>
+                </LinkButon>
+            </li>
+        </ul>
+    </div>
+</footer>
+

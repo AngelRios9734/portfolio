@@ -1,0 +1,40 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import '@fontsource-variable/onest'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon"  href="https://w7.pngwing.com/pngs/525/377/png-transparent-briefcase-business-clerk-office-official-paper-portfolio-work-black-business-black-office-thumbnail.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Angel Rios Porfolio</title>
+	</head>
+	<body class="flex flex-col h-full">
+		<div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: dark;
+	}
+
+	html {
+		font-family: "Onest Variable", sans-serif;
+		scroll-behavior: smooth;
+		height: 100%;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(34, 34, 34);
+	}
+</style>

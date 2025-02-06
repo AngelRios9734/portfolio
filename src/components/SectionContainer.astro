@@ -1,0 +1,10 @@
+---
+// Esto asegura que puedes acceder a las props pasadas al componente.
+const { class: additionalClass } = Astro.props;
+---
+<section 
+{...Astro.props}
+  class={` flex flex-col items-center text-center mt-20 my-32 ${additionalClass ?? ''}`}
+>
+  <slot />
+</section>

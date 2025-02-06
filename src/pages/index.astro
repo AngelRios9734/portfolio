@@ -1,0 +1,51 @@
+---
+import SocialPill from "../components/SocialPill.astro";
+import Layout from "../layouts/Layout.astro";
+import Sectioncontainer from "../components/SectionContainer.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import UserIcon from "../components/icons/UserIcon.astro"
+import About from "../components/About.astro";
+---
+
+<Layout>
+	<main>
+		<Sectioncontainer id="home">
+			<img src="Hero.webp"  class="rounded-full w-56 h-56 object-cover" />
+			<h1 class="text-4xl font-bold flex justify-center">
+				Hola, soy Angel Rios
+				<div></div>
+			</h1>
+			<h2 class="text-2xl text-pretty max-w-screen-md mb-3">
+				+15 años de experiencia.<span
+					class="text-cyan-500 font-semibold"
+					>Desarrollador y Creador de contenido.</span
+				> De Buenos Aires, Argentina,<span
+					class="text-orange-400 font-semibold"
+				>
+					Especializado en crear aplicaciones unicas.</span
+				>
+			</h2>
+			<SocialPill href="mailto:1997angelrios@gmail.com">
+				<MailIcon style="width: 25px; height: 25px; padding-top: 2px" />
+				1997angelRios@gmail.com
+			</SocialPill>
+		</Sectioncontainer>
+		<section id="proyects">
+			<h1 class="flex justify-center items-center text-5xl gap-3">
+				<ProjectsIcon />
+				Projects
+			</h1>
+			<Projects />
+		</section>
+		<SectionContainer id="about">
+			<h1 class="flex justify-center items-start text-5xl gap-3">
+				<UserIcon />
+				About me
+			</h1>
+			<About />
+		</SectionContainer>
+	</main>
+</Layout>
